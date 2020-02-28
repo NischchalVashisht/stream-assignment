@@ -1,15 +1,24 @@
 package com.knoldus;
 
-interface IntegerOperation<T>{
-    public abstract T opeartion(T first,T second,T third,T four,T five);
-}
 
+
+/**
+ *  Following Class represent
+ */
 public class Lambda {
 
-    public Integer getResult()
-    {
-        IntegerOperation<Integer> myOpeartion=(Integer a,Integer b ,Integer c,Integer d,Integer e)->a+b+c+d+e;
-        return  myOpeartion.opeartion(10,10,10,10,10);
+    /**
+     *
+     * @param <T> Following functional Interface uses for basic Operation.
+     */
+
+    private interface IntegerOperation<T> {
+        T operation(T first, T second, T third, T four, T five);
+    }
+    public Integer getResult(Integer l, Integer m, Integer n, Integer o, Integer p) {
+        IntegerOperation<Integer> myOperation = (Integer a, Integer b, Integer c, Integer d, Integer e)
+                -> a + b + c + d + e;
+        return myOperation.operation(l, m, n, o, p);
     }
 
 }

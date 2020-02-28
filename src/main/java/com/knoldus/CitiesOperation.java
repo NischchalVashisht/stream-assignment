@@ -5,17 +5,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CitiesOperation<String> {
+/**
+ * Following Class uses for sorting List of Cities on specific Types.
+ */
+public class CitiesOperation {
 
-    public List<java.lang.String> getResult() {
-        List<java.lang.String> myList=new ArrayList<java.lang.String>();
+    /**
+     *
+     * @return Returns a list of sorted Cities
+     */
+    public List<String> getResult() {
+        List<String> myList = new ArrayList();
         myList.add("Delhi");
         myList.add("Chandigarh");
         myList.add("china");
         myList.add("chit");
-        return   myList.stream().
-                filter(list -> list.toUpperCase().startsWith("C")).
-                sorted().collect(Collectors.toList());
+        return myList.stream()
+                .filter(list -> list.toUpperCase().startsWith("C"))
+                .sorted()
+                .collect(Collectors.toList());
 
     }
 }
